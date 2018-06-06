@@ -22,13 +22,19 @@ public class ClassifierService {
 		// Classify anger
 		ModelClassifier classifier = new ModelClassifier(dataset);
 		double scoreAnger = classifier.classifyAnger();
-		return createResponse(scoreAnger);
+		double scoreFear = classifier.classifyFear();
+		double scoreJoy = classifier.classifyJoy();		
+		double scoreSadness = classifier.classifySadness();
+		return createResponse(scoreAnger, scoreFear, scoreJoy, scoreSadness);
 	}
 	
-	private static JSONObject createResponse(double anger) {
-		JSONObject obj = new JSONObject();
-		obj.put("name", "anger");
-		obj.put("emotionIntensity", anger);
+	@SuppressWarnings("unchecked")
+	private static JSONObject createResponse(double anger, double fear, double joy, double sadness) {
+		JSONObject obj = new JSONObject();		
+		obj.put("anger", anger);
+		obj.put("fear", fear);
+		obj.put("joy", joy);
+		obj.put("sadness", sadness);
 	    return obj;  
 	}
 
