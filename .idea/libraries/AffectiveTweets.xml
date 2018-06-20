@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AffectiveTweets">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AffectiveTweets.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

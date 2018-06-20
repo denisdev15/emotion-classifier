@@ -6,23 +6,23 @@
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it as you wish ...
- *  I ask you only, as a professional courtesy, to cite my name, web page
+ *  I ask you only, as a professional courtesy, to cite my name, org.sindo.web page
  *  and my YouTube Channel!
  *
  */
-package Preprocessor;
+package org.sindo.Preprocessor;
 
 //import required classes
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
-import java.io.File;
-import java.io.IOException;
-
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Remove;
 import weka.filters.unsupervised.attribute.TweetToEmbeddingsFeatureVector;
 import weka.filters.unsupervised.attribute.TweetToLexiconFeatureVector;
+
+import java.io.File;
+import java.io.IOException;
 
 public class EmotionAttributeFilterDataset{
     private Instances dataset;
@@ -59,7 +59,7 @@ public class EmotionAttributeFilterDataset{
 
     public void filterTweetToEmbeddings() throws Exception {
         //set up options to filter to feature vector
-    	String[] opts = weka.core.Utils.splitOptions("weka.filters.unsupervised.attribute.TweetToEmbeddingsFeatureVector -S AVERAGE_ACTION -embeddingHandler \"affective.core.CSVEmbeddingHandler -K /home/denisdev/wekafiles/packages/AffectiveTweets/resources/w2v.twitter.edinburgh.100d.csv.gz -sep TAB -I last\" -K 15 -stemmer weka.core.stemmers.NullStemmer -stopwords-handler \"weka.core.stopwords.Null \" -I 1 -U -tokenizer \"weka.core.tokenizers.TweetNLPTokenizer \"");
+    	String[] opts = weka.core.Utils.splitOptions("weka.filters.unsupervised.attribute.TweetToEmbeddingsFeatureVector -S AVERAGE_ACTION -embeddingHandler \"affective.core.CSVEmbeddingHandler -K /Users/gustavo/Desktop/wekafiles/packages/AffectiveTweets/resources/w2v.twitter.edinburgh.100d.csv.gz -sep TAB -I last\" -K 15 -stemmer weka.core.stemmers.NullStemmer -stopwords-handler \"weka.core.stopwords.Null \" -I 1 -U -tokenizer \"weka.core.tokenizers.TweetNLPTokenizer \"");
     	
         //create a filter object (this is the filter class)
         TweetToEmbeddingsFeatureVector filter = new TweetToEmbeddingsFeatureVector();

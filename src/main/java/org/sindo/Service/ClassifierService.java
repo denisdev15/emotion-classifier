@@ -1,9 +1,9 @@
-package Service;
+package org.sindo.Service;
 
-import Dataset.EmotionDataset;
+import org.sindo.Dataset.EmotionDataset;
 import org.json.simple.JSONObject;
-import Model.ModelClassifier;
-import Preprocessor.EmotionAttributeFilterDataset;
+import org.sindo.Model.ModelClassifier;
+import org.sindo.Preprocessor.EmotionAttributeFilterDataset;
 import weka.core.Instances;
 
 public class ClassifierService {
@@ -35,7 +35,7 @@ public class ClassifierService {
 		obj.put("fear", fear);
 		obj.put("joy", joy);
 		obj.put("sadness", sadness);
-	    return obj;  
+	    return obj;
 	}
 
 }

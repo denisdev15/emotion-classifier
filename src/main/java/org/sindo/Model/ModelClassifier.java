@@ -1,4 +1,4 @@
-package Model;
+package org.sindo.Model;
 
 import java.io.File;
 
